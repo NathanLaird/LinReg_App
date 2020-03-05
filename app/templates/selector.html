@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form method="POST">
+    	{{form.csrf_token}}
+    	{{form.file}}
+    	{{form.column}}
+    	<input type="submit">
+    </form>
+    <script>
+    	let file_select = document.getElementById('file')
+    	let column_select = document.getElementById('column')
+    	
+    	file_select.onchange = function(){
+    		file = file_select.value;
+
+    		fetch('/column/'+file).then(function(response){
+    			response.json().then(function(data){
+    				console.table(data);
+    				let optionHTML = '';
+
+    				for (let column of data.columns){
+    					optionHTML += '<option values="' + column.id +'">' + column.name + '</option>'
+    				}
+
+    				column_select.innerHTML = optionHTML;
+
+    			});
+
+    		});
+    	}
+    </script>
+{% endblock %}

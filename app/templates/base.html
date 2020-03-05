@@ -1,0 +1,17 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to the Linear Regression Machine</title>
+        {% endif %}
+    </head>
+    <body>
+        <div><a href="/index">Home</a></div>
+        <div><a href="/uploader">Uploader</a></div>
+        <div><a href="/selector">Selector</a></div>
+        <hr>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
