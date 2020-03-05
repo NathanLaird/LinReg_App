@@ -10,4 +10,6 @@ Finally hit submit
 
 Several test files have been provided for you already in the data folder
 
- 
+
+Bug report: on the selector tab you have to change which file is selected in order for the columns to populate, even if the file you want is already selected you will need change the selected file at least once.
+
